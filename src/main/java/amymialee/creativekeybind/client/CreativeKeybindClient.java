@@ -23,7 +23,7 @@ public class CreativeKeybindClient implements ClientModInitializer {
                 "category.creativekeybind.bind"
         ));
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            while (keyBinding.wasPressed()) {
+            if (keyBinding.wasPressed()) {
                 try {
                     if (client.player.hasPermissionLevel(2)) {
                         GameMode gameMode2;
