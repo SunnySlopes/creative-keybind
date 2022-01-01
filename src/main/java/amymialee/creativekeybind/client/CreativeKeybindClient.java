@@ -5,7 +5,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
-import net.minecraft.client.options.KeyBinding;
+import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.text.LiteralText;
 import net.minecraft.world.GameMode;
@@ -25,8 +25,10 @@ public class CreativeKeybindClient implements ClientModInitializer {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (keyBinding.wasPressed()) {
                 try {
+                    assert client.player != null;
                     if (client.player.hasPermissionLevel(2)) {
                         GameMode gameMode2;
+                        assert client.interactionManager != null;
                         if (client.interactionManager.getCurrentGameMode() == GameMode.CREATIVE) {
                             gameMode2 = GameMode.SURVIVAL;
                         } else {

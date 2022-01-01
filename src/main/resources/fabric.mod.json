@@ -3,15 +3,15 @@
   "id": "creativekeybind",
   "version": "${version}",
   "name": "CreativeKeybind",
-  "description": "Quick change between Creative and Survival.",
+  "description": "Quickly change between Creative and Survival.",
   "authors": [
     "AmyMialee"
   ],
   "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/creative-keybind",
-    "issues": "https://discord.gg/P4dUsxv6An"
+    "homepage": "https://github.com/AmyMialeeMods/creative-keybind",
+    "issues": "https://github.com/AmyMialeeMods/creative-keybind/issues"
   },
-  "license": "GPL-3.0",
+  "license": "All-Rights-Reserved",
   "icon": "assets/creativekeybind/icon.png",
   "environment": "*",
   "entrypoints": {
@@ -19,13 +19,8 @@
       "amymialee.creativekeybind.client.CreativeKeybindClient"
     ]
   },
-  "mixins": [
-    "creativekeybind.mixins.json"
-  ],
   "depends": {
-    "fabricloader": "*",
-    "fabric": "*",
-    "minecraft": ">=1.16.2"
+    "fabric": "*"
   },
   "custom": {
     "modupdater": {
