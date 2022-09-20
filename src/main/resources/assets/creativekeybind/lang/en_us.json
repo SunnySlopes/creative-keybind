@@ -1,4 +1,5 @@
 {
   "key.creativekeybind.bind": "Toggle Creative/Survival",
-  "category.creativekeybind.bind": "Creative Keybind"
+  "category.creativekeybind.bind": "Creative Keybind",
+  "creativekeybind.denied" : "You do not have permissions to change gamemode."
 }

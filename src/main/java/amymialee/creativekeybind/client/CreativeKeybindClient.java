@@ -7,13 +7,15 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.world.GameMode;
 import org.lwjgl.glfw.GLFW;
 
 @Environment(EnvType.CLIENT)
 public class CreativeKeybindClient implements ClientModInitializer {
     private static KeyBinding keyBinding;
+
     @Override
     public void onInitializeClient() {
         keyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
@@ -34,14 +36,12 @@ public class CreativeKeybindClient implements ClientModInitializer {
                         } else {
                             gameMode2 = GameMode.CREATIVE;
                         }
-                        client.player.sendChatMessage("/gamemode " + gameMode2.getName());
+                        client.player.sendChatMessage("/gamemode " + gameMode2.getName(), null);
                     } else {
-                        client.player.sendMessage(new LiteralText("You do not have permissions to change gamemode."), false);
+                        client.player.sendMessage(Text.translatable("creativekeybind.denied").formatted(Formatting.RED), true);
                     }
                 } catch (Exception ignored) {}
             }
         });
     }
-
-
 }

@@ -1,5 +1,6 @@
 plugins {
-    id 'fabric-loom' version '0.10-SNAPSHOT'
+    id 'fabric-loom' version '1.0-SNAPSHOT'
+    id 'io.github.juuxel.loom-quiltflower' version '1.7.1'
     id 'maven-publish'
 }
 
@@ -19,5 +20,23 @@ processResources {
 
     filesMatching("fabric.mod.json") {
         expand "version": project.version
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            name = "willBlRepositoryReleases"
+            url = "https://maven.willbl.dev/releases"
+            credentials(PasswordCredentials)
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
     }
 }

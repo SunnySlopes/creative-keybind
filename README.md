@@ -1,7 +1,5 @@
 # Creative Keybind
-
 Creative Keybind allows you to quickly change between Creative and Survival.
-
 This is bound to the g key by default and can be changed in settings.
 
 <img src="https://github.com/AmyMialeeMods/creative-keybind/raw/main/assets/gamemode.png"><br>
