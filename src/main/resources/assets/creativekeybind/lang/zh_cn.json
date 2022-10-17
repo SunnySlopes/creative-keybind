@@ -1,0 +1,5 @@
+{
+  "key.creativekeybind.bind": "切换创造/生存模式",
+  "category.creativekeybind.bind": "创建绑定",
+  "creativekeybind.denied": "你没有权限更换模式"
+}
